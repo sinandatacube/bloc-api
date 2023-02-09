@@ -13,9 +13,13 @@ part 'cart_state.dart';
 
 class CartBloc extends Bloc<CartEvent, CartState> {
   List ids = [
-    {'id': "1299", "quantity": "3"},
-    {'id': "699", "quantity": "2"}
+    {'id': "1299", "quantity": "4"},
+    {'id': "699", "quantity": "3"},
+    {'id': "1020", "quantity": "2"},
+    {'id': "1000", "quantity": "1"}
   ];
+
+  // ids.sort((a, b) => a.someProperty.compareTo(b.someProperty));
   MainCartModel? cartItems;
   CartBloc() : super(CartInitial()) {
     on<LoadCartItems>((event, emit) async {
