@@ -130,6 +130,7 @@ class _CartState extends State<Cart> {
                   overflow: TextOverflow.ellipsis,
                 ),
                 Text(price),
+                Text(id),
               ],
             ),
           ),

@@ -62,6 +62,7 @@ class HomeRepository {
 
   Future getData(List prodIds) async {
     try {
+      prodIds.sort((a, b) => int.parse(a['id']).compareTo(int.parse(b['id'])));
       List ids = prodIds.map((e) => e['id']).toList();
 
       Map params = {'products': jsonEncode(ids)};
