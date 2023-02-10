@@ -8,7 +8,8 @@ class LoadCartItems extends CartEvent {}
 
 class DeleteFromCart extends CartEvent {
   final int index;
-  DeleteFromCart({required this.index});
+  final String id;
+  DeleteFromCart({required this.index, required this.id});
 }
 
 class UpdateCartItems extends CartEvent {

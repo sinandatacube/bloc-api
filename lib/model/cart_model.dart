@@ -33,7 +33,7 @@ class CartItem {
   });
 
   factory CartItem.fromJson(
-          Map<String, dynamic> json, Map<String, dynamic> localData) =>
+          Map<String, dynamic> json, Map<dynamic, dynamic> localData) =>
       CartItem(
         id: json["product_id"],
         name: json["product_name"],

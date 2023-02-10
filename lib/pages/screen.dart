@@ -1,15 +1,20 @@
+import 'dart:developer';
+
+import 'package:drift/drift.dart';
 import 'package:flutter/material.dart';
 
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:simple_bloc_api/controller/cart_controller.dart';
 import 'package:simple_bloc_api/pages/cart/cart.dart';
 import 'package:simple_bloc_api/repository/home_repositiory.dart';
 import 'package:simple_bloc_api/utils/utils.dart';
 
 import '../bloc/cart/cart_bloc.dart';
 import '../bloc/home/home_bloc.dart';
+import '../db services/db.dart';
 
 class HomeScreen extends StatelessWidget {
-  const HomeScreen({super.key});
+  HomeScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -56,7 +61,10 @@ class HomeScreen extends StatelessWidget {
       ),
       floatingActionButton: FloatingActionButton.extended(
           onPressed: () async {
-            context.read<HomeBloc>().add(FetchApi());
+            // context.read<HomeBloc>().add(FetchApi());
+            CartController().insertToTable(
+                BagsCompanion(productId: Value('1298'), quantity: Value('4')));
+            // CartController().getItemsFromTable();
           },
           label: Text("call")),
     );
