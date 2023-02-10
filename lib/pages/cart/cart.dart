@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:simple_bloc_api/controller/cart_controller.dart';
 
 import '../../bloc/cart/cart_bloc.dart';
 
@@ -168,7 +169,9 @@ class _CartState extends State<Cart> {
           ),
           IconButton(
               onPressed: () {
-                context.read<CartBloc>().add(DeleteFromCart(index: index));
+                context
+                    .read<CartBloc>()
+                    .add(DeleteFromCart(index: index, id: id));
               },
               icon: Icon(
                 Icons.delete,
